@@ -19,8 +19,8 @@ import java.util.List;
 public class DisplayInfo {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @OneToMany(mappedBy = "display_info")
-    private List<Product> products = new ArrayList<>();
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Product product;
 
     private String openingHours;
     private String placeName;

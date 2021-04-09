@@ -23,10 +23,10 @@ public class Comment {
     private String comment;
     private Double score;
 
-    @OneToMany(mappedBy = "reservation_user_comment")
-    private List<CommentImage> commentImages = new ArrayList<CommentImage>();
+    @OneToMany(mappedBy = "id")
+    private List<CommentImage> commentImages = new ArrayList<>();
 
-    @OneToMany(mappedBy = "reservation_user_comment")
+    @OneToMany(mappedBy = "id")
     private List<Product> products;
 
     @ManyToOne

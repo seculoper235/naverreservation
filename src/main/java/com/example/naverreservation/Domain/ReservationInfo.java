@@ -20,16 +20,19 @@ public class ReservationInfo {
     private int id;
 
     @ManyToOne
+    @JoinColumn(name = "product_id")
     private Product product;
 
     @ManyToOne
+    @JoinColumn(name = "display_info_id")
     private DisplayInfo displayInfo;
 
-    @ManyToOne
+    @OneToOne
+    @JoinColumn(name = "user_id")
     private User user;
 
     private LocalDateTime reservationDate;
-    private Boolean cancleFlag;
+    private Boolean cancelFlag;
 
     private LocalDateTime createDate;
     private LocalDateTime modifyDate;
